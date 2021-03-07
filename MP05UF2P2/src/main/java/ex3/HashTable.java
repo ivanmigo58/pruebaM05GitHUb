@@ -1,4 +1,4 @@
-package ex1;
+package ex3;
 
 // Original source code: https://gist.github.com/amadamala/3cdd53cb5a6b1c1df540981ab0245479
 // Modified by Fernando Porrino Serrano for academic purposes.
@@ -83,22 +83,22 @@ public class HashTable {
      */
     public String get(String key) {
         int hash = getHash(key);
-        try {
-            if(entries[hash] != null) {
-                HashEntry temp = entries[hash];
+        if(entries[hash] != null) {
+            HashEntry temp = entries[hash];
+            temp = getHashEntry(temp, key);
 
-                while( !temp.key.equals(key))
-                    temp = temp.next;
-
-                return temp.value;
-            }
-        }
-        // TODO: Cuando no existe el valor
-        catch (NullPointerException e) {
-            return null;
+            return temp.value;
         }
 
         return null;
+    }
+
+    // TODO: Extraccion del metodo
+    private HashEntry getHashEntry(HashEntry temp, String key) {
+        while( !temp.key.equals(key)) {
+            temp = temp.next;
+        }
+        return temp;
     }
 
     //    public String get(String key) {
@@ -124,8 +124,7 @@ public class HashTable {
         if(entries[hash] != null) {
             HashEntry temp = entries[hash];
 
-            while( !temp.key.equals(key))
-                temp = temp.next;
+            temp = getHashEntry(temp, key );
 
             // TODO: Borra el primero
             if(temp.prev == null) {

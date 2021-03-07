@@ -1,11 +1,12 @@
 package ex2;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class HashTableTest {
 
-    @org.junit.jupiter.api.Test
+    @ParameterizedTest
     @CsvSource({"20", "30", "40", "500"})
     void count(int inserts) {
         HashTable hashTable = new HashTable();
@@ -21,8 +22,8 @@ class HashTableTest {
         Assertions.assertEquals(16, hashTable.size());
     }
 
-    @org.junit.jupiter.api.Test
-    @CsvSource({"a,1", "b,2", "c.2"})
+    @ParameterizedTest
+    @CsvSource({"a,1", "b,2", "c,2"})
     void put(String value, String key) {
         HashTable hashTable = new HashTable();
         for (String key1 : hashTable.getCollisionsForKey(key, 5)) {
@@ -40,9 +41,11 @@ class HashTableTest {
         Assertions.assertEquals(value, hashTable.get(key));
     }
 
-    @org.junit.jupiter.api.Test
+    @ParameterizedTest
+    @CsvSource({"a,2", "b,1", "c,40000"})
     void drop(String value, String key) {
         HashTable hashTable = new HashTable();
+        // Elimina los datos insertados
         for (String key1 : hashTable.getCollisionsForKey(key, 5)) {
             hashTable.put(key1, value);
             hashTable.drop(key1);

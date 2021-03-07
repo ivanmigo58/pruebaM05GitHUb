@@ -40,17 +40,41 @@ public class HashTable {
             // Crea un array temporal con el valor de entries y la posicion de hash
             HashEntry temp = entries[hash];
 
-            temp.next = hashEntry;
-            hashEntry.prev = temp;
             // Si tiene otro valor como .next
-//            while(temp.next != null)
-//                temp = temp.next;
-//
-//            temp.next = hashEntry;
-//            hashEntry.prev = temp;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            // TODO: Cuando la clave primaria no coincide, se añade el nodo al siguiente
+            if (!temp.key.equals(key)) {
+                temp.next = hashEntry;
+            } else {
+                temp.value = value;
+            }
+            hashEntry.prev = temp;
         }
+        // TODO: Sumamos un ITEM
         ITEMS++;
     }
+
+    //    public void put(String key, String value) {
+//        int hash = getHash(key);
+//        final HashEntry hashEntry = new HashEntry(key, value);
+//        // Si el array de entradas es nulo
+//        if(entries[hash] == null) {
+//            // Se guarda
+//            entries[hash] = hashEntry;
+//        }
+//        // La posicion del hash ya esta ocupada
+//        else {
+//            // Crea un array temporal con el valor de entries en la pos. hash
+//            HashEntry temp = entries[hash];
+//            // Si tiene otro valor como .next
+//           while(temp.next != null)
+//               temp = temp.next;
+//            temp.next = hashEntry;
+//            hashEntry.prev = temp;
+//        }
+//    }
 
     /**
      * Permet recuperar un element dins la taula.
@@ -61,15 +85,35 @@ public class HashTable {
         int hash = getHash(key);
         if(entries[hash] != null) {
             HashEntry temp = entries[hash];
-
-            while( !temp.key.equals(key))
-                temp = temp.next;
+            temp = getHashEntry(temp, key);
 
             return temp.value;
         }
 
         return null;
     }
+
+    // TODO: Extraccion del metodo
+    private HashEntry getHashEntry(HashEntry temp, String key) {
+        while( !temp.key.equals(key)) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    //    public String get(String key) {
+//        int hash = getHash(key);
+//        if(entries[hash] != null) {
+//            HashEntry temp = entries[hash];
+//
+//            while( !temp.key.equals(key))
+//                temp = temp.next;
+//
+//            return temp.value;
+//        }
+//
+//        return null;
+//    }
 
     /**
      * Permet esborrar un element dins de la taula.
@@ -78,24 +122,24 @@ public class HashTable {
     public void drop(String key) {
         int hash = getHash(key);
         if(entries[hash] != null) {
-
             HashEntry temp = entries[hash];
-            while( !temp.key.equals(key))
-                temp = temp.next;
 
-            // TODO: Borrar el primero
+            temp = getHashEntry(temp, key );
+
+            // TODO: Borra el primero
             if(temp.prev == null) {
                 if (temp.next != null) {
                     temp.next.prev = null;
-                    entries[hash] = temp.next;
                 }
+                entries[hash] = temp.next;
             }
-            else{
+            else {
                 if(temp.next != null) temp.next.prev = temp.prev;   //esborrem temp, per tant actualitzem l'anterior al següent
                 temp.prev.next = temp.next;                         //esborrem temp, per tant actualitzem el següent de l'anterior
             }
+            // TODO: Se resta a los ITEM
+            ITEMS--;
         }
-        ITEMS--;
     }
 
 //    public void drop(String key) {
