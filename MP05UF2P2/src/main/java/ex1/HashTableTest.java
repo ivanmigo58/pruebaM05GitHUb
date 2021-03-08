@@ -23,7 +23,7 @@ class HashTableTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"a,1", "b,2", "c,2"})
+    @CsvSource({"b,2", "b,2", "c,2"})
     void put(String value, String key) {
         HashTable hashTable = new HashTable();
         for (String key1 : hashTable.getCollisionsForKey(key, 5)) {
@@ -42,7 +42,7 @@ class HashTableTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"a,2", "b,1", "c,40000"})
+    @CsvSource({"a,2", "a,2", "c,40000"})
     void drop(String value, String key) {
         HashTable hashTable = new HashTable();
         // Elimina los datos insertados
