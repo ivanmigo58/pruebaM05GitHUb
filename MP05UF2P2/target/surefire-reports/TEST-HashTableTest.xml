@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="HashTableTest" time="0.099" tests="12" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="13"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/test-classes:/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/classes:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/home/ivanmigo58/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/ivanmigo58/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/home/ivanmigo58/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ivanmigo58/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="Unknown"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="13"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="ES"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/surefire/surefirebooter1263820150374855532.jar /home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/surefire 2021-03-08T16-48-06_559-jvmRun1 surefire14017117108249656165tmp surefire_05662510090619972773tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/test-classes:/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/classes:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/home/ivanmigo58/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/ivanmigo58/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/home/ivanmigo58/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/ivanmigo58/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/home/ivanmigo58/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/ivanmigo58"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-07-14"/>
+    <property name="java.home" value="/usr/lib/jvm/java-13-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2/target/surefire/surefirebooter1263820150374855532.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="13.0.4+8-Ubuntu-120.04"/>
+    <property name="user.name" value="ivanmigo58"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.4.0-66-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/ivanmigo58/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="Unknown"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="idea.version" value="2020.3.2"/>
+    <property name="java.version" value="13.0.4"/>
+    <property name="user.dir" value="/home/ivanmigo58/git/pruebaM05GitHUb/MP05UF2P2"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="13.0.4+8-Ubuntu-120.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="57.0"/>
+  </properties>
+  <testcase name="get" classname="HashTableTest" time="0.014"/>
+  <testcase name="put{String, String}[1]" classname="HashTableTest" time="0.022"/>
+  <testcase name="put{String, String}[2]" classname="HashTableTest" time="0.001"/>
+  <testcase name="put{String, String}[3]" classname="HashTableTest" time="0.001"/>
+  <testcase name="drop{String, String}[1]" classname="HashTableTest" time="0.001"/>
+  <testcase name="drop{String, String}[2]" classname="HashTableTest" time="0.001"/>
+  <testcase name="drop{String, String}[3]" classname="HashTableTest" time="0.001"/>
+  <testcase name="size" classname="HashTableTest" time="0"/>
+  <testcase name="count{int}[1]" classname="HashTableTest" time="0.001"/>
+  <testcase name="count{int}[2]" classname="HashTableTest" time="0"/>
+  <testcase name="count{int}[3]" classname="HashTableTest" time="0.001"/>
+  <testcase name="count{int}[4]" classname="HashTableTest" time="0.001"/>
+</testsuite>
