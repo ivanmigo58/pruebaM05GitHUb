@@ -27,7 +27,7 @@ public class HashTable {
      * @param key La clau de l'element a afegir.
      * @param value El propi element que es vol afegir.
      */
-    public void put(String key, String value) {
+    public void put(String key, Object value) {
         int hash = getHash(key);
         final HashEntry hashEntry = new HashEntry(key, value);
         // Si el array de entrada es null se guarda
@@ -81,7 +81,7 @@ public class HashTable {
      * @param key La clau de l'element a trobar.
      * @return El propi element que es busca (null si no s'ha trobat).
      */
-    public String get(String key) {
+    public Object get(String key) {
         int hash = getHash(key);
         if(entries[hash] != null) {
             HashEntry temp = entries[hash];
@@ -164,26 +164,6 @@ public class HashTable {
         return key.hashCode() % SIZE;
     }
 
-    private class HashEntry {
-        String key;
-        String value;
-
-        // Linked list of same hash entries.
-        HashEntry next;
-        HashEntry prev;
-
-        public HashEntry(String key, String value) {
-            this.key = key;
-            this.value = value;
-            this.next = null;
-            this.prev = null;
-        }
-
-        @Override
-        public String toString() {
-            return "[" + key + ", " + value + "]";
-        }
-    }
 
     @Override
     public String toString() {

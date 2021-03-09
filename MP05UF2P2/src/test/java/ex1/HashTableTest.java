@@ -1,3 +1,5 @@
+package ex1;
+
 import ex1.HashTable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;

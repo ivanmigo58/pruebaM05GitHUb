@@ -83,11 +83,15 @@ public class HashTable {
      */
     public String get(String key) {
         int hash = getHash(key);
-        if(entries[hash] != null) {
-            HashEntry temp = entries[hash];
-            temp = getHashEntry(temp, key);
+        try {
+            if(entries[hash] != null) {
+                HashEntry temp = entries[hash];
+                temp = getHashEntry(temp, key);
 
-            return temp.value;
+                return temp.value;
+            }
+        } catch (NullPointerException e) {
+            return null;
         }
 
         return null;
@@ -162,27 +166,6 @@ public class HashTable {
         // piggy backing on java string
         // hashcode implementation.
         return key.hashCode() % SIZE;
-    }
-
-    private class HashEntry {
-        String key;
-        String value;
-
-        // Linked list of same hash entries.
-        HashEntry next;
-        HashEntry prev;
-
-        public HashEntry(String key, String value) {
-            this.key = key;
-            this.value = value;
-            this.next = null;
-            this.prev = null;
-        }
-
-        @Override
-        public String toString() {
-            return "[" + key + ", " + value + "]";
-        }
     }
 
     @Override

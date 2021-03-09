@@ -9,7 +9,7 @@
         <module name="MP05UF2P2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="13">
       <module name="MP05UF2P2" target="13" />
     </bytecodeTargetLevel>
   </component>
