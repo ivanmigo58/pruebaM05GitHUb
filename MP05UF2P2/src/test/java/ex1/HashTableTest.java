@@ -1,6 +1,5 @@
 package ex1;
 
-import ex1.HashTable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -8,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class HashTableTest {
 
     @ParameterizedTest
-    @CsvSource({"20", "30", "40", "500"})
+    @CsvSource({"50", "60", "70", "9000"})
     void count(int inserts) {
         HashTable hashTable = new HashTable();
         for (int i = 0; i < inserts; i++) {
@@ -24,7 +23,7 @@ class HashTableTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"a,1", "b,2", "c,2"})
+    @CsvSource({"b,2", "b,2", "c,2"})
     void put(String value, String key) {
         HashTable hashTable = new HashTable();
         for (String key1 : hashTable.getCollisionsForKey(key, 5)) {
@@ -43,7 +42,7 @@ class HashTableTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"a,2", "b,1", "c,40000"})
+    @CsvSource({"a,2", "a,2", "c,40000"})
     void drop(String value, String key) {
         HashTable hashTable = new HashTable();
         // Elimina los datos insertados
